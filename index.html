@@ -26,10 +26,10 @@
 
     .page {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
       align-items: center;
-      gap: clamp(28px, 5vw, 64px);
-      width: min(100% - 48px, 1120px);
+      gap: clamp(28px, 4vw, 56px);
+      width: min(100% - 48px, 1180px);
       min-height: 100vh;
       min-height: 100svh;
       margin: 0 auto;
@@ -53,7 +53,7 @@
     }
 
     h1 {
-      margin: 0 0 clamp(24px, 3vw, 34px);
+      margin: 0 0 clamp(20px, 2.5vw, 28px);
       color: #353535;
       font-size: clamp(25px, 2.1vw, 36px);
       line-height: 1.2;
@@ -62,9 +62,19 @@
     }
 
     .intro {
+      margin: 0 0 18px;
+      font-size: clamp(15px, 1.15vw, 19px);
+      line-height: 1.4;
+      font-weight: 300;
+      color: #454545;
+    }
+
+    .steps {
       margin: 0;
-      font-size: clamp(16px, 1.25vw, 22px);
-      line-height: 1.3;
+      padding-left: 4em;
+      list-style: none;
+      font-size: clamp(14px, 1.05vw, 17px);
+      line-height: 1.55;
       font-weight: 300;
       color: #454545;
     }
@@ -72,18 +82,18 @@
     .photo-panel {
       min-width: 0;
       width: 100%;
-      max-height: 520px;
-      aspect-ratio: 4 / 3;
-      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: #fff;
     }
 
     .photo-panel img {
       display: block;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center right;
+      height: auto;
+      max-height: 540px;
+      object-fit: contain;
     }
 
     /* Keep the side-by-side layout compact on smaller screens too. */
@@ -101,23 +111,30 @@
       h1 {
         font-size: clamp(19px, 4.8vw, 28px);
         line-height: 1.18;
-        margin-bottom: 18px;
+        margin-bottom: 14px;
       }
 
       .intro {
-        font-size: clamp(13px, 3.3vw, 17px);
+        margin-bottom: 12px;
+        font-size: clamp(12px, 3vw, 16px);
         line-height: 1.35;
       }
 
-      .photo-panel { max-height: 360px; }
+      .steps {
+        padding-left: 2em;
+        font-size: clamp(11px, 2.8vw, 15px);
+        line-height: 1.45;
+      }
+
+      .photo-panel img { max-height: 360px; }
     }
 
     @media (max-width: 380px) {
       .page { width: calc(100% - 24px); gap: 12px; }
       h1 { font-size: 18px; }
       .intro { font-size: 12px; }
+      .steps { padding-left: 1.5em; font-size: 11px; }
     }
-
   </style>
 </head>
 <body>
@@ -126,13 +143,19 @@
       <div class="copy">
         <h1>Looks like this domain isn't connected to a website yet</h1>
         <p class="intro">
-          This domain is currently down for maintenance or is not connected to a website
+          Is this your domain?<br>
+          Connect it to your website in just a few easy steps:
         </p>
+        <ol class="steps">
+          <li>1. Go to your domain provider</li>
+          <li>2. Click Use a Domain You Already Own</li>
+          <li>3. Follow the steps to connect your domain to your website</li>
+        </ol>
       </div>
     </section>
 
     <div class="photo-panel">
-      <img src="IMG_3879.webp" alt="A tangled pile of blue, silver, and orange cables">
+      <img src="wires.webp" alt="A tangled pile of blue, silver, and orange cables">
     </div>
   </main>
 </body>
