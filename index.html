@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#ffffff">
-  <title>Error</title>
+  <title>Domain Not Connected</title>
   <style>
     * { box-sizing: border-box; }
 
@@ -18,7 +18,7 @@
       min-height: 100vh;
       min-height: 100svh;
       background: #ffffff;
-      color: #4a4a4a;
+      color: #555555;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 300;
       -webkit-font-smoothing: antialiased;
@@ -26,47 +26,55 @@
 
     .page {
       display: grid;
-      grid-template-columns: minmax(340px, 1fr) minmax(360px, 1.25fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
       align-items: center;
-      gap: 48px;
-      max-width: 1200px;
+      gap: clamp(24px, 3vw, 48px);
+      width: min(100% - 48px, 1340px);
       min-height: 100vh;
       min-height: 100svh;
       margin: 0 auto;
-      padding: 48px 40px;
+      padding: 48px 0;
       background: #ffffff;
+    }
+
+    .copy-panel {
+      position: relative;
+      z-index: 2;
+      min-width: 0;
+      display: flex;
+      justify-content: flex-end;
     }
 
     .copy {
       width: 100%;
-      max-width: 460px;
+      max-width: 480px;
     }
 
     h1 {
-      margin: 0 0 22px;
+      margin: 0 0 24px;
       color: #333333;
-      font-size: 32px;
+      font-size: clamp(28px, 2.4vw, 38px);
       line-height: 1.2;
       letter-spacing: -0.5px;
-      font-weight: 400;
+      font-weight: 300;
     }
 
     .intro {
-      margin: 0 0 16px;
-      font-size: 16px;
+      margin: 0 0 18px;
+      font-size: clamp(15px, 1.15vw, 18px);
       line-height: 1.45;
       font-weight: 300;
-      color: #555555;
+      color: #5a5a5a;
     }
 
     .steps {
       margin: 0;
-      padding-left: 3em;
+      padding-left: 2.5em;
       list-style: none;
-      font-size: 15px;
+      font-size: clamp(14.5px, 1.1vw, 17.5px);
       line-height: 1.55;
       font-weight: 300;
-      color: #555555;
+      color: #5a5a5a;
     }
 
     .steps li {
@@ -77,11 +85,19 @@
       margin-bottom: 0;
     }
 
+    .domain-provider {
+      color: #e87722;
+      font-weight: 400;
+    }
+
     .photo-panel {
+      position: relative;
+      z-index: 1;
+      min-width: 0;
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       background: #ffffff;
     }
 
@@ -89,16 +105,21 @@
       display: block;
       width: 100%;
       height: auto;
-      max-height: 540px;
+      max-height: 580px;
       object-fit: contain;
     }
 
     @media (max-width: 820px) {
       .page {
         grid-template-columns: 1fr;
-        gap: 32px;
-        padding: 36px 24px;
+        gap: 28px;
+        width: calc(100% - 32px);
+        padding: 36px 0;
         min-height: auto;
+      }
+
+      .copy-panel {
+        justify-content: flex-start;
       }
 
       .copy {
@@ -106,7 +127,12 @@
       }
 
       h1 {
-        font-size: 26px;
+        font-size: 28px;
+      }
+
+      .intro,
+      .steps {
+        font-size: 16px;
       }
 
       .steps {
@@ -121,17 +147,19 @@
 </head>
 <body>
   <main class="page">
-    <section class="copy" aria-label="Domain information">
-      <h1>Looks like this domain isn't connected to a website yet</h1>
-      <p class="intro">
-        Is this your domain?<br>
-        Connect it to your website in just a few easy steps:
-      </p>
-      <ol class="steps">
-        <li>1. Go to your domain provider</li>
-        <li>2. Click Use a Domain You Already Own</li>
-        <li>3. Follow the steps to connect your domain to your website</li>
-      </ol>
+    <section class="copy-panel" aria-label="Domain information">
+      <div class="copy">
+        <h1>Looks like this domain isn't connected to a website yet</h1>
+        <p class="intro">
+          Is this your domain?<br>
+          Connect it to your website in just a few easy steps:
+        </p>
+        <ol class="steps">
+          <li>1. Go to your <span class="domain-provider">domain provider</span></li>
+          <li>2. Click Use a Domain You Already Own</li>
+          <li>3. Follow the steps to connect your domain to your website</li>
+        </ol>
+      </div>
     </section>
 
     <div class="photo-panel">
