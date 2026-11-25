@@ -18,7 +18,7 @@
       min-height: 100vh;
       min-height: 100svh;
       background: #ffffff;
-      color: #353535;
+      color: #6b6b6b;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-weight: 300;
       -webkit-font-smoothing: antialiased;
@@ -26,63 +26,57 @@
 
     .page {
       display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.35fr);
       align-items: center;
-      gap: clamp(24px, 4vw, 56px);
-      width: min(100% - 48px, 1180px);
-      min-height: 100vh;
-      min-height: 100svh;
+      gap: clamp(20px, 3vw, 44px);
+      width: min(100% - 48px, 1140px);
       margin: 0 auto;
-      padding: 48px 0;
+      padding: clamp(32px, 6vh, 64px) 0 48px;
       background: #ffffff;
     }
 
     .copy-panel {
-      position: relative;
       min-width: 0;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 24px 0;
-      background: #ffffff;
+      justify-content: flex-end;
     }
 
     .copy {
       width: 100%;
-      max-width: 460px;
+      max-width: 410px;
     }
 
     h1 {
-      margin: 0 0 clamp(20px, 2.5vw, 28px);
-      color: #2f2f2f;
-      font-size: clamp(26px, 2.35vw, 38px);
-      line-height: 1.2;
-      letter-spacing: -0.6px;
-      font-weight: 300;
+      margin: 0 0 18px;
+      color: #3d3d3d;
+      font-size: clamp(23px, 2vw, 31px);
+      line-height: 1.22;
+      letter-spacing: -0.4px;
+      font-weight: 400;
     }
 
     .intro {
-      margin: 0 0 18px;
-      font-size: clamp(15px, 1.15vw, 19px);
+      margin: 0 0 14px;
+      font-size: clamp(13px, 1.05vw, 15.5px);
       line-height: 1.45;
       font-weight: 300;
-      color: #555555;
+      color: #6e6e6e;
     }
 
     .steps {
       margin: 0;
-      padding-left: 4em;
+      padding-left: 2.25em;
       list-style: none;
-      font-size: clamp(14px, 1.1vw, 18px);
+      font-size: clamp(13px, 1.05vw, 15.5px);
       line-height: 1.5;
       font-weight: 300;
-      color: #555555;
+      color: #6e6e6e;
     }
 
     .steps li {
-      padding-left: 1.25em;
-      text-indent: -1.25em;
-      margin-bottom: 4px;
+      padding-left: 1.15em;
+      text-indent: -1.15em;
+      margin-bottom: 2px;
     }
 
     .steps li:last-child {
@@ -94,7 +88,7 @@
       width: 100%;
       display: flex;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start;
       background: #ffffff;
     }
 
@@ -102,7 +96,7 @@
       display: block;
       width: 100%;
       height: auto;
-      max-height: 540px;
+      max-height: 520px;
       object-fit: contain;
     }
 
@@ -114,25 +108,22 @@
         padding: 28px 0;
       }
 
-      .copy-panel { padding: 12px 0; }
-      .copy { max-width: 420px; }
+      .copy-panel { justify-content: flex-start; }
 
       h1 {
-        font-size: clamp(19px, 4.8vw, 28px);
-        line-height: 1.18;
-        margin-bottom: 14px;
+        font-size: clamp(18px, 4.5vw, 25px);
+        line-height: 1.2;
+        margin-bottom: 12px;
       }
 
       .intro {
-        margin-bottom: 12px;
-        font-size: clamp(12px, 3vw, 16px);
-        line-height: 1.35;
+        margin-bottom: 10px;
+        font-size: clamp(11.5px, 2.8vw, 14px);
       }
 
       .steps {
-        padding-left: 2em;
-        font-size: clamp(11px, 2.8vw, 15px);
-        line-height: 1.45;
+        padding-left: 1.5em;
+        font-size: clamp(11.5px, 2.8vw, 14px);
       }
 
       .photo-panel img { max-height: 360px; }
@@ -140,9 +131,8 @@
 
     @media (max-width: 380px) {
       .page { width: calc(100% - 24px); gap: 12px; }
-      h1 { font-size: 18px; }
-      .intro { font-size: 12px; }
-      .steps { padding-left: 1.5em; font-size: 11px; }
+      h1 { font-size: 17px; }
+      .intro, .steps { font-size: 11px; }
     }
   </style>
 </head>
